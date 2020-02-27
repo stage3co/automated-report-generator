@@ -8,7 +8,7 @@ current_date = datetime.datetime.now().replace(microsecond=0)
 date_limit = current_date - datetime.timedelta(30)
 time_limit_epochs = date_limit.timestamp() * 1000
 
-# spreadsheet_key
+# spreadsheet_key (Need to be changed with the sheet working on and also need to add the email ie. in prod.json to the shared people)
 spreadsheet_key = '1yT8FKPPVa8pWtjkD2jLrg-CHP4QS_VzoM-FltRQZFu4'
 
 # Creating a googleSheet instance

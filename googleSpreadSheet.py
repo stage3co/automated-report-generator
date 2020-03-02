@@ -4,10 +4,6 @@ import csv
 import os
 
 
-def add_header():
-    data = list()
-
-
 class GoogleSheetConnector:
 
     def __init__(self, spreadsheet_key):
@@ -37,7 +33,7 @@ class GoogleSheetConnector:
         self.worksheet.update_cells(cell_list)
 
     def clear_sheet(self):
-        # Clearing the sheet previous data
+        # Clearing the sheet's previous data
         self.worksheet.resize(rows=1)
         self.worksheet.resize(rows=5000)
 

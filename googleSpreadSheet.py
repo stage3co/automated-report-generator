@@ -4,6 +4,28 @@ import csv
 import os
 
 
+def save_last_updated_date(date):
+    cwd = os.getcwd()
+    cwd = cwd + "/data/last_updated_date.csv"
+
+    with open(cwd, "w") as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow([date])
+
+
+def get_last_updated_date():
+    updated_date = None
+    cwd = os.getcwd()
+    cwd = cwd + "/data/last_updated_date.csv"
+
+    with open(cwd, "r") as csvfile:
+        csvreader = csv.reader(csvfile)
+        for data in csvreader:
+            updated_date = data
+
+    return updated_date[0]
+
+
 class GoogleSheetConnector:
 
     def __init__(self, spreadsheet_key):
@@ -59,3 +81,4 @@ class GoogleSheetConnector:
 
         for data in enumerate(lst):
             self.worksheet.update_cell(1, data[0] + 1, data[1])
+

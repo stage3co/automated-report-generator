@@ -48,9 +48,9 @@ class GoogleSheetConnector:
         cwd = os.getcwd()
 
         if user == "merch":
-            cwd = "/data/merchandising_header_names.csv"
+            cwd = cwd + "/data/merchandising_header_names.csv"
         elif user == "mark":
-            cwd = "/data/marketing_header_names.csv"
+            cwd = cwd + "/data/marketing_header_names.csv"
 
         with open(cwd, "r") as csvfile:
             csvreader = csv.reader(csvfile)

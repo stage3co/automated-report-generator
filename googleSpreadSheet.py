@@ -58,4 +58,4 @@ class GoogleSheetConnector:
                 lst = data
 
         for data in enumerate(lst):
-            self.worksheet.update_cell(1, lst[0] + 1, lst[1])
+            self.worksheet.update_cell(1, data[0] + 1, data[1])
